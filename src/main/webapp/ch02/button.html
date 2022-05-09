@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+function check(){
+	//document > name=form1 > name=price > value
+	var price=document.form1.price.value;
+	var amount=document.form1.amount.value;
+	if(price==""){
+		alert("Please, input price!");
+		document.form1.price.focus();
+		return;
+	}
+	if(amount==""){
+		alert("Please, input amount!");
+		document.form1.amount.focus();
+		return;
+	}
+	document.form1.submit(); // sending data to server
+}
+</script>
+
+</head>
+<body>
+<form name="form1" action="button.jsp" method="post">
+price: <input type="text" name="price"><br>
+amount: <input type="text" name="amount"><br>
+<!-- <button type="button" onclick="check()">OK</button> -->
+<input type="button" onclick="check()" value="OK">
+</form>
+
+</body>
+</html>
